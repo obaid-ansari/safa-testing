@@ -1,0 +1,1081 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: relative;
+  height: 10vh;
+  width: 100%;
+}
+
+.navbar {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 4vw;
+  box-shadow: 0vh 0vh 2vh rgba(0, 0, 0, 0.534);
+  position: fixed;
+  z-index: 10000;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2b2b2b;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-links a {
+  text-decoration: none;
+  padding: 0px 1vw;
+  font-size: 1.2rem;
+  color: #2b2b2b;
+  font-weight: 400;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-3px);
+    font-weight: 500;
+    color: black;
+  }
+}
+
+/* Dropdown menu */
+.hajj-umrah {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  list-style: none;
+  top: 2rem;
+  right: 7vw;
+}
+
+.hajj-umrah li {
+  padding: 10px 15px;
+  margin: -12px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+    font-weight: 700;
+    text-shadow: 0px 0px 10px white;
+  }
+}
+
+#hajj-umrah:hover + .hajj-umrah,
+.hajj-umrah:hover {
+  display: block;
+}
+
+#burger {
+  display: none;
+}
+
+/* Burger menu toggle for phones and tablets */
+#burger.active + #nav-links {
+  display: flex; /* Show nav links when burger menu is active */
+}
+
+/* Main Section */
+/* Hero Styling */
+
+#hero {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  box-shadow: 0vh 0vh 2vh rgba(0, 0, 0, 0.534);
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Darkens the background image for better text visibility */
+  transition: background-image 1s ease-in-out;
+}
+
+#hero-heading {
+  font-size: 3.2rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 10px white;
+  animation: movetodown 1s linear;
+}
+
+@keyframes movetodown {
+  0% {
+    transform: translateY(-5vh);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+#hero-para {
+  font-size: 1.4rem;
+  width: 45%;
+  padding: 4vh 0vh;
+  text-align: center;
+  text-shadow: 0px 0px 10px white;
+  color: white;
+  font-weight: 500;
+  animation: movetoup 1s linear;
+}
+
+@keyframes movetoup {
+  0% {
+    transform: translateY(4vh);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+#hero button {
+  height: 7vh;
+  width: 9vw;
+  font-size: 1.2rem;
+  background-color: aliceblue;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  filter: drop-shadow(0px 0px 5px white);
+  font-weight: 500;
+  cursor: pointer;
+  animation: Servicesbtn 1.5s linear infinite 1.5s;
+}
+
+#hero button a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+@keyframes Servicesbtn {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-10px);
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(-8px);
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Our Services Styling */
+
+#our-Services {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 0vh 6vw 8vh 6vw;
+  background: linear-gradient(
+    to bottom,
+    rgb(204, 228, 247) 11.2%,
+    rgb(237, 246, 250) 100.2%
+  );
+}
+
+#our-Services h2 {
+  font-size: 2.2rem;
+  margin: 5vh 0vw 4vh 0vw;
+  text-align: center;
+}
+
+.service-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh 8vw;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  height: auto;
+  width: 20vw;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: Scardanimation linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes Scardanimation {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.service-card a img {
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 30vh;
+  width: 100%;
+}
+
+.service-card h3 {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  padding: 5px 10px;
+}
+
+/* Popular Destination Styling */
+
+.places {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding: 0vh 6vw 8vh 6vw;
+  background: linear-gradient(
+    to top,
+    rgb(204, 228, 247) 11.2%,
+    rgb(237, 246, 250) 100.2%
+  );
+}
+
+.places h2 {
+  font-size: 2.2rem;
+  margin: 5vh 0vw 4vh 0vw;
+  text-align: center;
+}
+
+.places h4 {
+  font-size: 1.7rem;
+  margin: 3vh 0vw 4vh 3vw;
+  text-align: left;
+  font-weight: 600;
+}
+
+.destination-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh 3vw;
+}
+
+.destination-card {
+  height: auto;
+  width: 18vw;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: Pcardanimation 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes Pcardanimation {
+  0% {
+    transform: translateY(50px);
+    opacity: 0.2;
+    scale: 0.8;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.destination-card img {
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 30vh;
+}
+
+.destination-card h3 {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+
+.destination-card p {
+  padding: 5px 10px;
+}
+
+#review-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0vh 6vw 8vh 6vw;
+  background: linear-gradient(
+    -225deg,
+    #5270c461 0%,
+    #b19fff52 48%,
+    #eba1fe5c 100%
+  );
+}
+
+#review-container h2 {
+  font-size: 2.2rem;
+  margin: 5vh 0vw 3vh 0vw;
+  text-align: center;
+}
+
+#feedbackPara {
+  padding: 0vh 25vw 3vh;
+  text-align: center;
+}
+
+.review-des-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4vh 3vw;
+}
+
+.review-description {
+  position: relative;
+  background: linear-gradient(-225deg, #5271c4 0%, #b19fff 48%, #eca1fe 100%);
+  color: #ffffff;
+  width: 40%;
+  border-radius: 10px;
+  padding: 4vh 2vw;
+  transition: transform 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: rotate(-3deg);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.review-description span {
+  font-size: 0.9rem;
+}
+
+.review-description p {
+  padding: 1vh 0vw;
+}
+
+.review-description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-225deg, #5271c4 0%, #b19fff 48%, #eca1fe 100%);
+  transition: transform 0.3s;
+  border-radius: 10px;
+  z-index: -10;
+}
+.review-description:hover::before {
+  transform: rotate(5deg);
+}
+
+/* Footer Styling */
+
+#footer-container {
+  background-color: #141b2a;
+  color: white;
+}
+
+.footer-upper {
+  display: grid;
+  padding: 4vh 0vw 2vh;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+}
+
+.footer-content {
+  margin: 0vh 0vw 0vh 6vw;
+  padding-left: 3vw;
+}
+
+.footer-content h4 {
+  font-size: 1.3rem;
+  margin-bottom: 2vh;
+}
+
+.footer-content li {
+  list-style: none;
+  margin-bottom: 1vh;
+}
+
+.footer-content li a {
+  color: #e7e8e9;
+  text-decoration: none;
+  transition: all 0.3s;
+  &:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+  }
+}
+
+.footer-content a i {
+  color: #e7e8e9;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+  margin-right: 1vw;
+  &:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+  }
+}
+
+.footer-bottom {
+  padding: 4vh 0vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid grey;
+}
+
+.footer-bottom p {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* For tablets (max-width: 768px) */
+@media only screen and (min-width: 737px) and (max-width: 833px) {
+  nav {
+    position: relative;
+    height: 7vh;
+  }
+
+  .navbar {
+    padding: 0px 4vw;
+    height: 7vh;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  #nav-links {
+    flex-direction: column; /* Stack menu items vertically */
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    display: none; /* Keep hidden until burger menu is clicked */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    backdrop-filter: blur(50px);
+  }
+
+  #nav-links a {
+    padding: 1.5vh;
+    font-size: 2rem;
+    font-weight: 700;
+    border: transparent;
+    text-align: center;
+    width: 100%;
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+
+  #burger {
+    display: block; /* Show burger menu */
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .hajj-umrah {
+    position: static; /* Dropdown adjusts to inline flow for better stacking */
+  }
+  .hajj-umrah li {
+    padding: 0px;
+    font-weight: 700;
+    border: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  #hero {
+    height: 35vh;
+  }
+
+  #hero-heading {
+    font-size: 2.5rem;
+  }
+
+  #hero-para {
+    font-size: 1.2rem;
+    width: 80%;
+    padding: 3vh 0vh;
+  }
+
+  #hero button {
+    height: 5.5vh;
+    width: 18vw;
+    font-size: 1.1rem;
+  }
+
+  #our-Services {
+    padding: 0vh 5vw 5vh 5vw;
+  }
+
+  .service-card-container {
+    gap: 3vh 0vw;
+  }
+
+  .service-card {
+    height: auto;
+    width: 100%;
+  }
+
+  .service-card a img {
+    height: 20vh;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .places {
+    padding: 0vh 4vw 5vh 4vw;
+  }
+
+  .places h2 {
+    font-size: 2rem;
+    margin: 1vh 0vw 3vh 0vw;
+  }
+
+  .places h4 {
+    font-size: 1.5rem;
+    margin: 2vh 0vw 2vh 8vw;
+  }
+
+  .destination-card-container {
+    flex-wrap: wrap;
+    gap: 3vh 5vw;
+  }
+
+  .destination-card {
+    height: auto;
+    width: 40%;
+  }
+
+  .destination-card img {
+    height: 20vh;
+  }
+
+  .destination-card h3 {
+    font-size: 1.3rem;
+  }
+
+  #review-container {
+    padding: 0vh 5vw 5vh 5vw;
+  }
+
+  #feedbackPara {
+    padding: 0vh 15vw 3vh;
+  }
+
+  .review-des-container {
+    gap: 3vh 3vw;
+  }
+
+  .review-description {
+    width: 40%;
+    padding: 3vh 2vw;
+  }
+
+  .review-description span {
+    font-size: 1.1rem;
+  }
+
+  .review-description p {
+    padding: 1vh 0vw 0vh 0vw;
+  }
+
+  .footer-upper {
+    padding: 3vh 0vw 2vh;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  }
+
+  .footer-content {
+    margin: 0vh 0vw 0vh 10vw;
+  }
+
+  .footer-content h4 {
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+  }
+
+  .footer-content li {
+    margin-bottom: 1vh;
+  }
+
+  .footer-bottom {
+    padding: 3vh 0vw;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 736px) {
+  nav {
+    position: relative;
+    height: 7vh;
+  }
+
+  .navbar {
+    padding: 0px 4vw;
+    height: 7vh;
+  }
+
+  .logo {
+    font-size: 1.6rem; /* Reduce logo size */
+  }
+
+  #burger {
+    display: block; /* Ensure burger menu is visible */
+    font-size: 1.8rem;
+  }
+
+  #nav-links {
+    flex-direction: column; /* Stack menu items vertically */
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    display: none; /* Keep hidden until burger menu is clicked */
+    backdrop-filter: blur(50px);
+    border-bottom: 1px solid rgb(0, 0, 0);
+  }
+
+  #nav-links a {
+    padding: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .hajj-umrah {
+    position: static; /* Dropdown adjusts to inline flow for better stacking */
+  }
+  .hajj-umrah li {
+    padding: 1vh;
+    font-weight: 700;
+    border: transparent;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  #hero {
+    height: 40vh;
+  }
+
+  #hero-heading {
+    font-size: 2.8rem;
+  }
+
+  #hero-para {
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 2vh 4vh;
+  }
+
+  #hero button {
+    height: 4.5vh;
+    width: 25vw;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  #our-Services {
+    padding: 3vh 5vw;
+  }
+
+  #our-Services h2 {
+    margin: 0vh 0vw 2vh;
+    font-size: 2rem;
+  }
+
+  .service-card-container {
+    gap: 3vh 0vw;
+  }
+
+  .service-card {
+    width: 100%;
+  }
+
+  .service-card a img {
+    height: 20vh;
+  }
+
+  .service-card h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    padding: 8px 10px;
+  }
+
+  .places {
+    padding: 3vh 1vw;
+  }
+
+  .places h2 {
+    margin: 0vh 0vw 2vh;
+    font-size: 2rem;
+  }
+
+  .places h4 {
+    font-size: 1.5rem;
+    margin: 2vh 0vw 2vh 4vw;
+  }
+
+  .destination-card-container {
+    flex-wrap: wrap;
+    gap: 3vh 2vw;
+  }
+
+  .destination-card {
+    width: 46%;
+  }
+
+  .destination-card img {
+    height: 18vh;
+  }
+
+  .destination-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .destination-card p {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  #review-container {
+    padding: 3vh 1vw;
+  }
+
+  #review-container h2 {
+    margin: 0vh 0vw 2vh;
+    font-size: 2rem;
+  }
+  #feedbackPara {
+    padding: 0vh 5vw 3vh;
+  }
+
+  .review-des-container {
+    gap: 2vh 0vw;
+  }
+
+  .review-description {
+    width: 90%;
+    padding: 2vh 2vw;
+  }
+
+  .review-description span {
+    font-size: 0.9rem;
+  }
+
+  .review-description p {
+    padding: 1vh 0vw;
+  }
+  .footer-upper {
+    padding: 4vh 0vw 4vh;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .footer-content {
+    margin: 0vh 0vw 0vh 4vw;
+    padding-left: 1vw;
+  }
+
+  .footer-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+  }
+
+  .footer-content li {
+    margin-bottom: 1vh;
+  }
+
+  .footer-content a i {
+    font-size: 1.3rem;
+  }
+
+  .footer-bottom p {
+    font-size: 1rem;
+  }
+}
+
+/* For phones (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  nav {
+    position: relative;
+    height: 8vh;
+  }
+
+  .navbar {
+    padding: 0px 3vw;
+    height: 8vh;
+  }
+
+  .logo {
+    font-size: 1.5rem; /* Reduce logo size */
+  }
+
+  #burger {
+    display: block; /* Ensure burger menu is visible */
+    font-size: 1.5rem;
+  }
+
+  #nav-links {
+    flex-direction: column; /* Stack menu items vertically */
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    display: none; /* Keep hidden until burger menu is clicked */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    backdrop-filter: blur(50px);
+  }
+
+  #nav-links a {
+    padding: 12px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .hajj-umrah {
+    position: static; /* Dropdown adjusts to inline flow for better stacking */
+  }
+  .hajj-umrah li {
+    padding: 1vh;
+    font-weight: 700;
+    border: transparent;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  #hero {
+    height: 50vh;
+  }
+
+  #hero-heading {
+    font-size: 2.3rem;
+  }
+
+  #hero-para {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 2vh 4vh;
+  }
+
+  #hero button {
+    height: 5.5vh;
+    width: 30vw;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  #our-Services {
+    padding: 2vh 3vw 3vh 3vw;
+  }
+
+  #our-Services h2 {
+    margin: 2vh 3vw 3vh;
+    font-size: 1.8rem;
+  }
+
+  .service-card-container {
+    gap: 4vh 0vw;
+  }
+
+  .service-card {
+    width: 100%;
+  }
+
+  .service-card a img {
+    height: 20vh;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .service-card p {
+    padding: 5px 10px;
+  }
+
+  .places {
+    padding: 2vh 1vw 3vh;
+  }
+
+  .places h2 {
+    margin: 2vh 3vw 3vh;
+    font-size: 1.8rem;
+  }
+
+  .places h4 {
+    font-size: 1.2rem;
+    margin: 2vh 0vw 2vh 4vw;
+  }
+
+  .destination-card-container {
+    flex-wrap: wrap;
+    gap: 2vh 3vw;
+  }
+
+  .destination-card {
+    width: 45%;
+  }
+
+  .destination-card img {
+    height: 18vh;
+  }
+
+  .destination-card h3 {
+    font-size: 1rem;
+  }
+
+  .destination-card p {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  #review-container {
+    padding: 2vh 1vw 3vh;
+  }
+
+  #review-container h1 {
+    margin: 2vh 3vw 3vh;
+    font-size: 1.8rem;
+  }
+  #feedbackPara {
+    padding: 0vh 5vw 3vh;
+  }
+
+  .review-des-container {
+    gap: 4vh 2vw;
+  }
+
+  .review-description {
+    width: 90%;
+    padding: 3vh 2vw;
+  }
+
+  .review-description span {
+    font-size: 1rem;
+  }
+
+  .review-description p {
+    padding: 1vh 0vw;
+  }
+
+  .footer-upper {
+    padding: 4vh 0vw 4vh;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .footer-content {
+    margin: 0vh 0vw 0vh 4vw;
+    padding-left: 1vw;
+  }
+
+  .footer-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+  }
+
+  .footer-content li {
+    margin-bottom: 1vh;
+  }
+
+  .footer-content a i {
+    font-size: 1.3rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}

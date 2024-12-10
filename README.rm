@@ -1,0 +1,11 @@
+npm install express
+npm install dotenv
+npm install nodemailer
+npm install body-parser
+npm install --save-dev nodemon
+"scripts": {
+  "start": "node your-app.js",
+  "dev": "nodemon your-app.js"
+}
+npm run dev
+npx nodemon app.js

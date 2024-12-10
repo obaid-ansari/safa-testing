@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="flight.css" />
+      <link rel="icon" type="image/x-icon" href="imgs/Logo.jpg" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+      <title>Flight Booking - Safa Tours And Travels</title>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Flight Booking</h1>
+        <form id="flightBookingForm">
+          <!-- Personal Information -->
+          <div class="form-section">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+              <label for="name">Name*</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone*</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+
+          <!-- Flight Details -->
+          <div class="form-section">
+            <h2>Flight Details</h2>
+            <div class="form-group">
+              <label for="origin">From*</label>
+              <input type="text" id="origin" name="origin" required />
+            </div>
+            <div class="form-group">
+              <label for="destination">To*</label>
+              <input type="text" id="destination" name="destination" required />
+            </div>
+            <div class="form-group">
+              <label for="journeyType">Journey Type*</label>
+              <select id="journeyType" name="journeyType" required>
+                <option value="oneWay">One Way</option>
+                <option value="return">Return</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="departureDate">Departure Date*</label>
+              <input
+                type="date"
+                id="departureDate"
+                name="departureDate"
+                required />
+            </div>
+            <div class="form-group" id="returnDateGroup" style="display: none">
+              <label for="returnDate">Return Date*</label>
+              <input type="date" id="returnDate" name="returnDate" />
+            </div>
+          </div>
+
+          <!-- Passenger Details -->
+          <div class="form-section">
+            <h2>Passenger Details</h2>
+            <div class="note">
+              Note: Maximum 9 passengers allowed in any combination of Adults,
+              Children, and Infants
+            </div>
+            <div class="form-group">
+              <label for="adults">Adults (12+ years)*</label>
+              <input
+                type="number"
+                id="adults"
+                name="adults"
+                min="1"
+                max="9"
+                value="1"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="children">Children (2-11 years)</label>
+              <input
+                type="number"
+                id="children"
+                name="children"
+                min="0"
+                max="9"
+                value="0" />
+            </div>
+            <div class="form-group">
+              <label for="infants">Infants (under 2 years)</label>
+              <input
+                type="number"
+                id="infants"
+                name="infants"
+                min="0"
+                max="9"
+                value="0" />
+            </div>
+            <div id="dobContainer">
+              <!-- DOB fields will be dynamically added here -->
+            </div>
+          </div>
+
+          <!-- Class and Fare Type -->
+          <div class="form-section">
+            <h2>Class and Fare Details</h2>
+            <div class="form-group">
+              <label for="class">Class*</label>
+              <select id="class" name="class" required>
+                <option value="firstClass">First Class</option>
+                <option value="businessClass">Business Class</option>
+                <option value="premiumEconomy">Premium Economy</option>
+                <option value="economy">Economy</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fareType">Fare Type*</label>
+              <select id="fareType" name="fareType" required>
+                <option value="regular">Regular</option>
+                <option value="student">Student</option>
+                <option value="marine">Marine</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Book Flight</button>
+        </form>
+      </div>
+      <script src="flight.js"></script>
+    </body>
+  </html>
+</html>
