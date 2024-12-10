@@ -11,7 +11,7 @@ document
       guests: document.getElementById("guests").value,
     };
 
-    fetch("/api/hotels", {
+    fetch("/https://safa-testing-backend.onrender.com/hotels", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
