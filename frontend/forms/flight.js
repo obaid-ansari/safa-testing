@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("/api/flights", {
+      const response = await fetch("https://safa-testing-backend.onrender.com/flights", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
