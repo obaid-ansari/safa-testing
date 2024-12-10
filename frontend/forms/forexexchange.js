@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     try {
-      const response = await fetch("/api/forex", {
+      const response = await fetch("https://safa-testing-backend.onrender.com/forex", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
